@@ -8,7 +8,7 @@ This page summarizes the two computational models used in the project:
 
 In order for the models to be understood, a basic explanation of the experimental task performed by the subjects is included below. For further details, please refer to the section "Experimental design and behavioral data analysis" within "Material and Methods" in the paper.
 
-# Experimental task
+## Experimental task
 
 In the present research, subjects performed a word identification task, illustrated in the below figure:
 
@@ -22,6 +22,6 @@ After target word presentation, a "perceptual mask" consisting of randomly-gener
 
 Finally, a test display consisting of a single "response" word was presented. Subjects had to decide whether this word was the "same" or "different" from the target word.
 
-# Machine learning SVM model
+## Machine learning SVM model
 
 The goal of the SVM (support vector machine) model was to predict subject choice (whether they pressed the button that corresponded to "same" or "different").
