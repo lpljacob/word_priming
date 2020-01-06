@@ -20,8 +20,15 @@ Immediately after the presentation of the prime, a "target" word was presented. 
 
 After target word presentation, a "perceptual mask" consisting of randomly-generated lines was shown.
 
-Finally, a test display consisting of a single "response" word was presented. Subjects had to decide whether this word was the "same" or "different" from the target word.
+Finally, a test display consisting of a single "response" word was presented. Subjects had to decide whether this word was the "same" or "different" from the target word. In the figure above, the correct answer would be "different".
+
+There were 8 experimental conditions total. These conditions were a product of three factors, each with two levels: prime duration (long or short), whether the response word matched the prime word (primed or unprimed), and what was the correct answer for the trial (same or different). 
 
 ## Machine learning SVM model
 
-The goal of the SVM (support vector machine) model was to predict subject choice (whether they pressed the button that corresponded to "same" or "different").
+The goal of the SVM (support vector machine) model was to predict subject choice (whether they pressed the button that corresponded to "same" or "different"). 
+
+The model was trained on the neural EEG data corresponding to the 700ms following response word presentation, during which subjects deliberated which button to press (they were told to delay any button presses to the moment a response cue was shown). These 700ms worth of neural data were split into 14 windows of 50ms each; then, each of these 50ms of data were averaged into a single measure. This was done independently for each of the 64 EEG scalp sensors, resulting in a 64 (sensors) by 14 (time windows) data matrix for each experimental trial. The data from each trial was then normalized via z-scoring.
+
+Prior to model training, data was set aside for validation. To parse out variability from random sampling, training and validation was conducted 1000 times. Each time, 40 trials for each subject were set aside for validation (5 randomly selected trials from each of the 8 conditions), and the model was trained on all remaining trials (aggregated from all subjects and conditions). Then, the model was validated on the held-out trials. Validation was done three ways: all subjects and conditions to obtain a global performance, then on each subject at once, then on each condition at once. Model performance was saved, then everything was wiped clean and a new model was trained and validated. Finally, performance from the 1000 models were averaged.
+
