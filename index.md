@@ -10,7 +10,7 @@ This page summarizes two core aspects of the project:
 
 In the present research, subjects performed a word identification task, illustrated in the below figure. An explanation of the key aspects of the task follows; for further details, please refer to the section "Experimental design and behavioral data analysis" within "Material and Methods" in the [paper](https://www.biorxiv.org/content/10.1101/862516v1.full.pdf).
 
-![experimental task](https://raw.githubusercontent.com/lpljacob/word_priming/master/1_paradigm.png)
+![experimental task](https://raw.githubusercontent.com/lpljacob/word_priming/master/1_paradigm.png =250x)
 
 Each trial began with the presentation of a doubled-up "prime" word. The goal of this word was to change the way subsequent words in the stream are processed by the visual system. The prime word could be presented for a "short" duration of 50ms (very brief and difficult to perceive), or for a "long" duration of 400ms (longer than the time it takes for an adult to read a single word). The prime is doubled-up so that it is not presented in the same screen position as the target
 
