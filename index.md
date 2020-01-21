@@ -46,4 +46,10 @@ The goal of the neural network model was to test the validity of a theory known 
 
 To test this theory, an artificial neural network model that simulates temporal integration in vision was created, and resource depletion was implemented in the model through a series of mathematical equations. The model, therefore, simulates what is believed to be happening in the brain, and outputs behavior predictions (accuracy across different conditions in the experimental task) and neural activity predictions (the average shape of EEG waveforms elicited by the display of the response word). If the theory underlying the model actually represents what is happening within the brain, the model's predictions will be very similar to the observed data collected from participants.
 
+The model structured is displayed in a schematic below. It is organized in four layers, equivalent to four functional areas of the brain that represent progressively more complex stimuli.
 
+<img src="https://raw.githubusercontent.com/lpljacob/word_priming/master/2_nrouse.png" width="500">
+
+The first (bottom) layer is the retinotipic layer; it represents simple line segments within each position of the visual field. The second layer represents simple visual objects (in the case of the present task, individual letters). The third layer represents more complex objects; lexical entries (words). These three layers together form the perceptual basis of the model (i.e. what is being seen right now). In order for the model to make same/different decisions, it needs a fourth layer; named maintained semantics, it acts as the model's working memory, allowing it to retain the identity of previously seen words for short periods of time.
+
+Each layer contains nodes, and each node represents large group of neurons that respond to the same stimulus. As shown in the figure above, these nodes connect to each other via excitatory or inhibitory connections.
