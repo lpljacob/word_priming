@@ -3,10 +3,10 @@
 [Pre-print available for free on bioRxiv.](https://www.biorxiv.org/content/10.1101/862516v1)
 
 This page summarizes the two computational models used in the project: 
-- The **machine learning SVM model** that predicts trial-by-trial subject choice based on neural data;
+- The **machine learning SVM model** that predicts trial-by-trial subject behavior based on neural data;
 - The **neural network model** that simulates temporal integration in vision and predicts average subject behavior and neural activity.
 
-In order for the models to be understood, a basic explanation of the experimental task performed by the subjects is included below. For further details, please refer to the section "Experimental design and behavioral data analysis" within "Material and Methods" in the paper.
+For better understanding of the models, a basic explanation of the experimental task performed by the subjects is included below. For further details, please refer to the section "Experimental design and behavioral data analysis" within "Material and Methods" in the paper.
 
 ## Experimental task
 
@@ -18,9 +18,9 @@ Each trial began with the presentation of a doubled-up "prime" word. The goal of
 
 Immediately after the presentation of the prime, a "target" word was presented. It was flashed briefly for around 75ms. Subjects were instructed to pay attention and identify this target word.
 
-After target word presentation, a "perceptual mask" consisting of randomly-generated lines was shown.
+After target word presentation, a "perceptual mask" consisting of randomly-generated lines was shown. The goal of the mask was to reduce visibility of the target word, making the task more difficult.
 
-Finally, a test display consisting of a single "response" word was presented. Subjects had to decide whether this word was the "same" or "different" from the target word. In the figure above, the correct answer would be "different".
+Finally, a test display consisting of a single "response" word was presented. Subjects had to decide whether this word was the "same" or "different" from the target word. In the figure above, the correct answer would be "different". Subjects indicated their choice by pressing a button once a response cue was displayed.
 
 There were 8 experimental conditions total. These conditions were a product of three factors, each with two levels: prime duration (long or short), whether the response word matched the prime word (primed or unprimed), and what was the correct answer for the trial (same or different). 
 
@@ -28,7 +28,7 @@ There were 8 experimental conditions total. These conditions were a product of t
 
 The goal of the SVM (support vector machine) model was to predict subject choice (whether they pressed the button that corresponded to "same" or "different"). 
 
-The model was trained on the neural EEG data corresponding to the 700ms following response word presentation, during which subjects deliberated which button to press (they were told to delay any button presses to the moment a response cue was shown). These 700ms worth of neural data were split into 14 windows of 50ms each; then, each of these 50ms of data were averaged into a single measure. This was done independently for each of the 64 EEG scalp sensors, resulting in a 64 (sensors) by 14 (time windows) data matrix for each experimental trial. The data from each trial was then normalized via z-scoring.
+The model was trained on the neural EEG (electroencephalogram) data collected during the 700ms following response word presentation, during which subjects deliberated which button to press (they were told to delay any button presses to the moment the response cue was shown). These 700ms of neural data were split into 14 windows of 50ms each; then, each of these 50ms of data were averaged into a single value. This was done independently for each of the 64 EEG sensors, resulting in a 64 (sensors) by 14 (time windows) data matrix for each experimental trial. The data from each trial was then normalized via z-scoring.
 
-Prior to model training, data was set aside for validation. To parse out variability from random sampling, training and validation was conducted 1000 times. Each time, 40 trials for each subject were set aside for validation (5 randomly selected trials from each of the 8 conditions), and the model was trained on all remaining trials (aggregated from all subjects and conditions). Then, the model was validated on the held-out trials. Validation was done three ways: all subjects and conditions to obtain a global performance, then on each subject at once, then on each condition at once. Model performance was saved, then everything was wiped clean and a new model was trained and validated. Finally, performance from the 1000 models were averaged.
+Prior to model training, data was set aside for validation. To parse out variability from random sampling, training and validation was conducted 1000 times. Each time, 40 trials for each subject were set aside for validation (5 randomly selected trials from each of the 8 conditions), and the model was trained on all remaining trials (aggregated from all subjects and conditions). Then, the model was validated on the held-out trials. Validation was done three ways: all subjects and conditions to obtain global performance, then on each subject at a time, then on each condition at a time. Model performance was saved, then everything was wiped clean and a new model was trained and validated. Finally, performance from the 1000 models were averaged.
 
