@@ -48,7 +48,7 @@ To test this theory, an artificial neural network model that simulates temporal 
 
 The model structured is displayed in a schematic below. It is organized in four layers, equivalent to four functional areas of the brain that represent progressively more complex stimuli.
 
-<img src="https://raw.githubusercontent.com/lpljacob/word_priming/master/2_nrouse.png" width="500">
+<img src="https://raw.githubusercontent.com/lpljacob/word_priming/master/2_nrouse.png" width="800">
 
 The first (bottom) layer is the retinotipic layer; it represents simple line segments within each position of the visual field. The second layer represents simple visual objects (in the case of the present task, individual letters). The third layer represents more complex objects; lexical entries (words). These three layers together form the perceptual basis of the model (i.e. what is being seen right now). In order for the model to make same/different decisions, it needs a fourth layer; named maintained semantics, it acts as the model's working memory, allowing it to retain the identity of previously seen words for short periods of time.
 
