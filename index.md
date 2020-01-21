@@ -24,7 +24,7 @@ Finally, a test display consisting of a single "response" word was presented. Su
 
 There were 8 experimental conditions total. These conditions were a product of three factors, each with two levels: prime duration (long or short), whether the response word matched the prime word (primed or unprimed), and what was the correct answer for the trial (same or different). In labeling these conditions, the letters A or B are used to refer to each word in the sequence of events (each trial required no more than two unique words), across the prime, target, and response word presentations. Thus, the same-primed condition is A-A-A (the same word for all three presentations), the same-unprimed condition is A-B-B, the different-primed condition is A-B-A, and the different-unprimed condition is A-A-B.
 
-## Machine learning SVM model
+## Machine learning SVM model [(code)](https://github.com/lpljacob/eeg_classifier)
 
 The goal of the SVM (support vector machine) model was to predict subject choice (whether they pressed the button that corresponded to "same" or "different"). 
 
@@ -40,7 +40,7 @@ To that end, the model was trained and validated on each time window separately.
 
 As seen in the figure, for the time windows immediately following response word presentation, accuracy is low and close to chance. This would be expected, considering the brain has not had enough time to process the word. Starting at the 200-250ms window, accuracy quickly rises, peaking at the 350-400ms window. The high predictive power of this individual window coincides with a well-known neural signal called the N400: a negative-voltage brain potential that typically peaks around 400ms following display of a word considered to be unexpected by readers. However, the N400 potential can happen in several different contexts, and the scientific literature has struggled to formulate a comprehensive theory of its neural basis. The results of this SVM model, showing that the 350-400ms time window is predictive of behavior in a novelty detection task (i.e. is this new/different or old/same), sheds new light in the neural basis of the N400 potential, and has important implications for the understanding of visual and linguistic processing.
 
-## Neural network model
+## Neural network model [(code)](https://github.com/lpljacob/nrouse_model)
 
 The goal of the neural network model was to test the validity of a theory known as neural habituation; according to this theory, neurons that respond to a particular visual stimulus (such as a specific word) become low on communication resources (neurotransmitters) if they are presented with their preferred stimulus for a significant period of time. When they are low on resources, their output becomes weaker; while this may appear to be a setback, this weaker output to a continued stimulus allows the brain to respond more strongly to new, different stimuli. In other word, the theory states that resource depletion leads to increased novelty detection.
 
