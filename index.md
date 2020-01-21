@@ -42,3 +42,8 @@ As seen in the figure, for the time windows immediately following response word 
 
 ## Neural network model
 
+The goal of the neural network model was to test the validity of a theory known as neural habituation; according to this theory, neurons that respond to a particular visual stimulus (such as a specific word) become low on communication resources (neurotransmitters) if they are presented with their preferred stimulus for a significant period of time. When they are low on resources, their output becomes weaker; while this may appear to be a setback, this weaker output to a continued stimulus allows the brain to respond more strongly to new, different stimuli. In other word, the theory states that resource depletion leads to increased novelty detection.
+
+To test this theory, an artificial neural network model that simulates temporal integration in vision was created, and resource depletion was implemented in the model through a series of mathematical equations. The model, therefore, simulates what is believed to be happening in the brain, and outputs behavior predictions (accuracy across different conditions in the experimental task) and neural activity predictions (the average shape of EEG waveforms elicited by the display of the response word). If the theory underlying the model actually represents what is happening within the brain, the model's predictions will be very similar to the observed data collected from participants.
+
+
