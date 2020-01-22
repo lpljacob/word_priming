@@ -62,4 +62,4 @@ Predictions for EEG neural activity are obtained by summing the output of all no
 
 Predictions for the N400 neural potential are shown below (for P100/N170 predictions, please refer to the section "ERP results" in the paper). The neural network model used parameters that best fit the behavioral data, and it was never fit to the neural data. Therefore, the model's ability to predict the neural data is particularly striking, specially when it comes to the condition effects (second and third rows).
 
-<img src="https://github.com/lpljacob/word_priming/blob/master/7_n400waveforms.png" width="800">
+<img src="https://raw.githubusercontent.com/lpljacob/word_priming/master/7_n400waveforms.png" width="900">
