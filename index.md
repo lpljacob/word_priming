@@ -1,20 +1,22 @@
 [Published on the peer-reviewed journal Computational Brain & Behavior.](https://link.springer.com/article/10.1007/s42113-019-00071-w?shared-article-renderer)
 
-[Pre-print available for free on bioRxiv.](https://www.biorxiv.org/content/10.1101/862516v1)
+[Pre-print available on bioRxiv.](https://www.biorxiv.org/content/10.1101/862516v1)
 
 This page summarizes the two computational models used in the project: 
 - The **machine learning SVM model** that predicts trial-by-trial subject behavior based on neural data;
-- The **neural network model** that simulates temporal integration in vision and predicts average subject behavior and average neural activity.
+- The **neural network model** that simulates temporal parsing in vision and predicts average subject behavior and average neural activity.
+
+The overarching goal of this research was to study how the visual system parses information over time. More specifically, the research tested a theory called 'neural habituation'. According to this theory, persistent neural activity consumes synaptic resources (neurotransmitters). This resource depletion in the active neuronal population causes the neural response to repeated stimuli to be dampened, thus allowing the visual system to more easily perceive novel stimuli. In summary, the theory states that resource depletion, which is typically seen as a setback, can be beneficial, as it enhances novelty detection.
 
 For better understanding of the models, a basic explanation of the experimental task performed by the subjects is included below. For further details, please refer to the section "Experimental design and behavioral data analysis" within "Material and Methods" in the paper.
 
 ## Experimental task
 
-In the present research, subjects performed a word identification task, illustrated in the figure below:
+Subjects performed a word identification task, illustrated in the figure below:
 
 <img src="https://raw.githubusercontent.com/lpljacob/word_priming/master/1_paradigm.png" width="300">
 
-Each trial began with the presentation of a doubled-up "prime" word. The goal of this word was to change how subsequent words in the trial are processed by the visual system. The prime word could be presented for a "short" duration of 50ms, or for a "long" duration of 400ms.
+Each trial began with the presentation of a doubled-up "prime" word. The goal of this word was to change how subsequent words in the trial are processed by the visual system. The prime word could be presented for a "short" duration of 50ms (which should generate less resource depletion, and thus less neural habituation), or for a "long" duration of 400ms (more resource depletion, and more neural habituation.
 
 Immediately after presentation of the prime, a "target" word was shown. It was flashed briefly for around 75ms. Subjects were instructed to pay attention and identify this target word.
 
